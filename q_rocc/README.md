@@ -7,7 +7,7 @@ intent of the extension is to provide new instructions for defining search and
 inference problems that will be made available to programmers in a variety of
 high-level compiled languages.
 
-This this extension of the RISC-V instruction set simulator, [spike]
+This extension of the RISC-V instruction set simulator, [spike]
 (https://github.com/riscv/riscv-isa-sim), allows execution of binaries utilizing
 those new instructions. Instead of providing several implementations of the
 probabilistic semantics within this open-source project, we implement a minimal
