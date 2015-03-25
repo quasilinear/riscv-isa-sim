@@ -28,6 +28,7 @@
 // forward declaration of callback functions
 uint64_t qio_get_reg(void* instance, uint8_t which);
 uint64_t qio_get_mem(void* instance, uint64_t addr);
+uint64_t qio_get_instruction(void* instance, uint64_t addr);
 
 class q_rocc_t : public rocc_t
 {
@@ -66,6 +67,7 @@ class q_rocc_t : public rocc_t
     qio_callbacks_t callbacks = {
       .get_reg = qio_get_reg,
       .get_mem = qio_get_mem,
+      .get_instruction = qio_get_instruction,
     };
 
     qio_init(this, callbacks);
@@ -74,6 +76,7 @@ class q_rocc_t : public rocc_t
 
   friend uint64_t qio_get_reg(void* instance, uint8_t which);
   friend uint64_t qio_get_mem(void* instance, uint64_t addr);
+  friend uint64_t qio_get_instruction(void* instance, uint64_t addr);
 
  private:
   qio_exec_t qio_exec = NULL;
@@ -93,6 +96,11 @@ uint64_t qio_get_reg(void* instance, uint8_t which) {
 uint64_t qio_get_mem(void* instance, uint64_t addr) {
   q_rocc_t* q = (q_rocc_t*)instance;
   return q->p->get_mmu()->load_uint64(addr);
+}
+
+uint64_t qio_get_instruction(void* instance, uint64_t addr) {
+  q_rocc_t* q = (q_rocc_t*)instance;
+  return q->p->get_mmu()->load_insn(addr).insn.bits();
 }
 
 // fallback driver implementation

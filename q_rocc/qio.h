@@ -17,6 +17,7 @@
 typedef struct {
   uint64_t (*get_reg)(void* instance, uint8_t which);
   uint64_t (*get_mem)(void* instance, uint64_t addr);
+  uint64_t (*get_instruction)(void* instance, uint64_t addr);
 } qio_callbacks_t;
 
 typedef void (*qio_init_t)(void* instance, qio_callbacks_t callbacks);
