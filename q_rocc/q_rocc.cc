@@ -116,7 +116,7 @@ extern "C" {
   uint64_t qio_exec(uint8_t funct, uint64_t xs1, uint64_t xs2) {
     if (q_trace_file != NULL) {
       uint64_t res;
-      if (fscanf(q_trace_file, "0x%llu\n", &res) > 0) {
+      if (fscanf(q_trace_file, "0x%llx\n", &res) > 0) {
         return res;
       } else {
         return 0;
