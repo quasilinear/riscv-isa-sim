@@ -1,3 +1,5 @@
+/* Copyright 2015, Quasilinear Research, All rights reserved. */
+
 /**
  * Q (Quasilinear) Instruction Set Extension Driver Interface
  * 
