@@ -31,7 +31,7 @@
 #undef PACKAGE_VERSION
 
 /* Define if subproject MCPPBS_SPROJ_NORM is enabled */
-#undef Q_ROCC_ENABLED
+#undef Q_EXT_ENABLED
 
 /* Define if subproject MCPPBS_SPROJ_NORM is enabled */
 #undef RISCV_ENABLED

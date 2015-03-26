@@ -1,0 +1,7 @@
+q_ext_subproject_deps = \
+	spike_main \
+	riscv \
+	softfloat \
+
+q_ext_srcs = \
+	q_ext.cc \
