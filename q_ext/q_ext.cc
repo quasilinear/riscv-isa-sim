@@ -40,7 +40,7 @@ static uint64_t get_mem(uint64_t addr) {
   return current_proc->get_mmu()->load_uint64(addr);
 }
 
-static uint64_t get_insn(uint64_t addr){ 
+static uint32_t get_insn(uint64_t addr){ 
   return current_proc->get_mmu()->load_insn(addr).insn.bits();
 }
 

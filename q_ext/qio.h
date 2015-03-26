@@ -19,7 +19,7 @@ typedef struct {
   uint64_t (*get_xpr)(uint8_t which);
   uint64_t (*get_fpr)(uint8_t which);
   uint64_t (*get_mem)(uint64_t addr);
-  uint64_t (*get_insn)(uint64_t addr);
+  uint32_t (*get_insn)(uint64_t addr);
 } qio_callbacks_t;
 
 typedef void (*qio_init_t)(qio_callbacks_t* callbacks);
