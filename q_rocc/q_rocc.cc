@@ -86,10 +86,15 @@ class q_rocc_t : public rocc_t
 
 uint64_t qio_get_reg(void* instance, uint8_t which) {
   q_rocc_t* q = (q_rocc_t*)instance;
+  state_t* state = q->p->get_state();
   if (which == 0) {
-    return q->p->get_state()->pc;
+    return state->pc;
+  } else if (which < NXPR) {
+    return state->XPR[which];
+  } else if (which < NXPR + NFPR) {
+    return state->FPR[which - NXPR];
   } else {
-    return q->p->get_state()->XPR[which];
+    return 0;
   }
 }
 
