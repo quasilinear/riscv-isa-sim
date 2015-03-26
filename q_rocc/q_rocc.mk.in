@@ -1,7 +1,0 @@
-q_rocc_subproject_deps = \
-	spike_main \
-	riscv \
-	softfloat \
-
-q_rocc_srcs = \
-	q_rocc.cc \
