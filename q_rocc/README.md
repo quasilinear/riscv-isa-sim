@@ -29,5 +29,4 @@ external driver to load is given an environment variable so that driver
 implementations may be changed without rebuilding the instruction set simulator.
 
 See `qio.h` for the specification of the interface drivers (dynamically loaded
-shared libraries) should implement. See `q_rocc.cc` for details of the in-built
-fallback driver.
+shared libraries) should implement.
